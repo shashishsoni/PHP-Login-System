@@ -13,11 +13,9 @@ class DB {
 
 		try {
 
-			self::$con = new PDO( 'mysql:charset=utf8mb4;host=localhost;port=3306;dbname=login_system', 'root', 'Shashish@#1237' );
+			self::$con = new PDO( 'mysql:charset=utf8mb4;host=127.0.0.1;port=3308;dbname=login_system', 'root', 'root' );
 			self::$con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-			self::$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);//uncomment on production sites
 			self::$con->setAttribute( PDO::ATTR_PERSISTENT, false );
-			self::$con->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 		} catch (PDOException $e) {
 			echo "Could not connect to database."; exit;
